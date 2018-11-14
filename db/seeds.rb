@@ -1,0 +1,16 @@
+Students.create(name:"Blair")
+Students.create(name:"Kaeland")
+Students.create(name:"Kwam")
+Students.create(name:"Will")
+Students.create(name:"Cory")
+Students.create(name:"Andy")
+Students.create(name:"Paris")
+Students.create(name:"Ed")
+
+
+Instructors.create(name:"Robby")
+Instructors.create(name:"Emily")
+Instructors.create(name:"Brit")
+Instructors.create(name:"Garry")
+Instructors.create(name:"Ronny")
+Instructors.create(name:"Tez")
