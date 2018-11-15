@@ -11,13 +11,21 @@ class StudentCommandLineInterface
     puts "What do you need help with?"
     response = gets.chomp
     puts "Sweet, let's see if we can get someone to help you..."
+    sleep(2.5)
     # respon
   end
 
   def display_instructors
-    puts "Ok here are the available instructors..."
+    puts " Ok here are the available instructors..."
     Instructor.all.each do |instructor|
       puts "#{instructor.name}"
     end
+  end
+
+  def get_available_instructor
+    puts "Select available instructor from the list…"
+    response = gets.chomp 
+    sleep(1)
+    puts "Great, an instructor will be in touch with you soon!"
   end
 end
