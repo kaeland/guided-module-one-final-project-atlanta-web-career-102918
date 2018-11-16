@@ -23,10 +23,18 @@ class StudentCommandLineInterface
   end
 
   def display_instructors
-    puts "Ok here are the available instructors..."
-    Instructor.where(is_generous: true).each do |instructor|
-      puts "#{instructor.name}"
-    end
+    # puts "Ok here are the available instructors..."
+    saved = Student.find_by(name: @student_name).id
+    meet = Meeting.where(student_id: saved)
+    instructor_name = meet[0].instructor.name
+    # puts @student_name.id.instructors
+
+    # Instructor.where(is_generous: true).each do |instructor|
+    #   puts "#{instructor.name}"
+    # end
+
+    puts "Hey, looks like we found someone for you. #{instructor_name}
+    will be with you soon."
   end
 
   def get_available_instructor
@@ -42,6 +50,6 @@ class StudentCommandLineInterface
   end
 
   def create_meeting
-    Meeting.create(student_id: @instance_of_student.id topic: @topic, question: @question, answer: @answer)
+    # Meeting.create(student_id: @instance_of_student.id topic: @topic, question: @question, answer: @answer)
   end
 end

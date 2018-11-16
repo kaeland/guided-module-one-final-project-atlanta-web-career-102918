@@ -14,7 +14,10 @@ garry = Instructor.create(name:"Garry", is_generous: 1)
 ronnie = Instructor.create(name:"Ronny", is_generous: 1)
 tez = Instructor.create(name:"Tez", is_generous: 1)
 
-# meeting_1 = Meeting.create(instructor_id: rob.id, student_id: kwam.id, topic: nil, question: nil, answer: nil)
-# meeting_2 = Meeting.create(instructor_id: emily.id, student_id: kwam.id, topic: nil, question: nil, answer: nil)
-# meeting_3 = Meeting.create(instructor_id: emily.id, student_id: kwam.id, topic: nil, question: nil, answer: nil)
+meeting_1 = Meeting.create(instructor_id: rob.id, student_id: kwam.id, topic: nil, question: nil, answer: nil)
+meeting_2 = Meeting.create(instructor_id: emily.id, student_id: will.id, topic: nil, question: nil, answer: nil)
+meeting_3 = Meeting.create(instructor_id: brit.id, student_id: andy.id, topic: nil, question: nil, answer: nil)
+meeting_3 = Meeting.create(instructor_id: garry.id, student_id: paris.id, topic: nil, question: nil, answer: nil)
+meeting_3 = Meeting.create(instructor_id: ronnie.id, student_id: blair.id, topic: nil, question: nil, answer: nil)
+meeting_3 = Meeting.create(instructor_id: tez.id, student_id: ed.id, topic: nil, question: nil, answer: nil)
 
