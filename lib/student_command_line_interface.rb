@@ -4,12 +4,12 @@ class StudentCommandLineInterface
     @student_name = nil
     @topic = nil
     @question = nil
-    @instructor_name = nil 
+    @instructor_id = nil 
   end
    
   def get_student_first_name
     puts "What’s your first name?..."
-    @student_name = gets.chomp
+    @student_name = gets.chomp.downcase 
   end
 
   def get_topic_and_question_from_student
@@ -25,14 +25,15 @@ class StudentCommandLineInterface
   def display_instructors
     puts "Ok here are the available instructors..."
     Instructor.where(is_generous: true).each do |instructor|
-      puts "#{instructor.name}"
+      puts "#{instructor.name.capitalize}"
     end
   end
 
   def get_available_instructor
     puts "Select an instructor from the list above, 
           and then write their name below…"
-    @instructor_name = gets.chomp 
+    instructor_name = gets.chomp.downcase
+    @instructor_id = Instructor.where(name: instructor_name).pluck(:id)[0]
     sleep(1)
     puts "Great, an instructor will be in touch with you soon!"
   end
@@ -42,6 +43,7 @@ class StudentCommandLineInterface
   end
 
   def create_meeting
-    Meeting.create(student_id: @instance_of_student.id, topic: @topic, question: @question, answer: @answer)
+    # binding.pry 
+    Meeting.create(instructor_id: @instructor_id, student_id: @instance_of_student.id, topic: @topic, question: @question, answer: @answer)
   end
 end

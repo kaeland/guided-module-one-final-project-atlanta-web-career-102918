@@ -3,13 +3,14 @@ student_cli = StudentCommandLineInterface.new
 instructor_cli = InstructorCommanLineInterface.new
 
 puts "Are you a student? (Yes or No):"
-response = gets.chomp
+response = gets.chomp.downcase
 
 if response == "yes"
   student_cli.get_student_first_name
   student_cli.get_topic_and_question_from_student
   student_cli.display_instructors
   student_cli.get_available_instructor
+  student_cli.create_student
   student_cli.create_meeting 
 else
   instructor_cli.get_instructor_first_name
