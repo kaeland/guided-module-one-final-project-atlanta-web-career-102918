@@ -20,13 +20,13 @@ class InstructorCommanLineInterface
       puts "Ok thanks anyways, bye"
     else 
       puts "Sweet! Here's who needs help and with what…"
-      #display students
+      Meeting.where.not(student_id: nil)
     end  
   end
 
   def select_student_to_help
     puts "Write the student's name you'd like to help below..."
-    @student_to_help = gets.chomp 
+    @student_to_help = gets.chomp
     #select which student teacher wants to help
     puts "Sweet, please answer their question below…"
     @answer = gets.chomp 

@@ -10,6 +10,7 @@ if response == "yes"
   student_cli.get_topic_and_question_from_student
   student_cli.display_instructors
   student_cli.get_available_instructor
+  student_cli.create_meeting 
 else
   instructor_cli.get_instructor_first_name
   instructor_cli.is_instructor_generous

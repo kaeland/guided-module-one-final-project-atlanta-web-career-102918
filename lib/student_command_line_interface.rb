@@ -42,6 +42,6 @@ class StudentCommandLineInterface
   end
 
   def create_meeting
-    Meeting.create(student_id: @instance_of_student.id topic: @topic, question: @question, answer: @answer)
+    Meeting.create(student_id: @instance_of_student.id, topic: @topic, question: @question, answer: @answer)
   end
 end
